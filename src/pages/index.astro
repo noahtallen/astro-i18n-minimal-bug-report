@@ -1,5 +1,6 @@
 ---
-import { t } from 'astro-i18n';
+import { t, astroI18n } from 'astro-i18n';
+const { data } = await fetch('http://localhost:4321/api/data').then((res) => res.json());
 ---
 
 <html lang="en">
@@ -12,5 +13,7 @@ import { t } from 'astro-i18n';
 	</head>
 	<body>
 		<h1>{t('title')}</h1>
+		<p>Locale: {astroI18n.locale}</p>
+		<p>API data: {data}</p>
 	</body>
 </html>
