@@ -1,6 +1,6 @@
 ---
 import { t, astroI18n } from 'astro-i18n';
-const { data } = await fetch('http://localhost:4321/api/data').then((res) => res.json());
+const { data } = await fetch(Astro.url.origin + '/api/data').then((res) => res.json());
 ---
 
 <html lang="en">
